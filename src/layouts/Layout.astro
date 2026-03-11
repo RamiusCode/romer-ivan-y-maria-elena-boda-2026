@@ -36,6 +36,9 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
 
+    <!-- 🖼️ Precargar imagen de fondo de la portada ANTES de renderizar -->
+    <link rel="preload" as="image" href="/imagenes/BlancoTextura.webp" />
+
     <style>
       * {
         margin: 0;
@@ -48,6 +51,8 @@ const { title } = Astro.props;
         height: 100%;
         overflow-x: hidden;
         color-scheme: light only;
+        /* 🔒 Color sólido INSTANTÁNEO mientras carga BlancoTextura */
+        background-color: #f5f0e8;
       }
 
       body {
